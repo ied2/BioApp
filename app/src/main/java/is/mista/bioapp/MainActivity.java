@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity
         });
 
         // Blessaður
+        // Hallo
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(

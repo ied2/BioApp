@@ -54,7 +54,6 @@ public class ListAdapter extends BaseAdapter {
         // Text
 //        textView.setText(listOfMovies[position]);
 
-        Log.d("IED", listOfMovies[position].trim());
         // Image
         Picasso.with(this.mContext)
                 .load(listOfMovies[position].trim())

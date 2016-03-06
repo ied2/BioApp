@@ -3,6 +3,7 @@ package is.mista.bioapp;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -23,7 +24,14 @@ public class MainActivity extends AppCompatActivity
     static final String[] movielist_demo =
             new String[] { "http://ia.media-imdb.com/images/M/MV5BMTgxMDAzNzMyMV5BMl5BanBnXkFtZTgwNjIwMTgxNzE@.jpg",
                     "http://ia.media-imdb.com/images/M/MV5BNTE5NzU3MTYzOF5BMl5BanBnXkFtZTgwNTM5NjQxODE@.jpg",
-                    "http://ia.media-imdb.com/images/M/MV5BMTEwNTU2MjAwMDdeQTJeQWpwZ15BbWU3MDk2Njc2Njk@.jpg"};
+                    "http://ia.media-imdb.com/images/M/MV5BMTY1ODY2MTgwM15BMl5BanBnXkFtZTgwOTY3Nzc3NzE@.jpg",
+                    "http://ia.media-imdb.com/images/M/MV5BNTE5NzU3MTYzOF5BMl5BanBnXkFtZTgwNTM5NjQxODE@.jpg",
+                    "http://ia.media-imdb.com/images/M/MV5BNTE5NzU3MTYzOF5BMl5BanBnXkFtZTgwNTM5NjQxODE@.jpg",
+                    "http://ia.media-imdb.com/images/M/MV5BNTE5NzU3MTYzOF5BMl5BanBnXkFtZTgwNTM5NjQxODE@.jpg",
+                    "http://ia.media-imdb.com/images/M/MV5BNTE5NzU3MTYzOF5BMl5BanBnXkFtZTgwNTM5NjQxODE@.jpg",
+                    "http://ia.media-imdb.com/images/M/MV5BNTE5NzU3MTYzOF5BMl5BanBnXkFtZTgwNTM5NjQxODE@.jpg",
+                    "http://ia.media-imdb.com/images/M/MV5BNTE5NzU3MTYzOF5BMl5BanBnXkFtZTgwNTM5NjQxODE@.jpg",
+                    "http://ia.media-imdb.com/images/M/MV5BNTE5NzU3MTYzOF5BMl5BanBnXkFtZTgwNTM5NjQxODE@.jpg"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +65,13 @@ public class MainActivity extends AppCompatActivity
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if(view.findViewById(R.id.dagskra).getVisibility() == View.INVISIBLE) {
+//                    view.findViewById(R.id.movie_poster).setAlpha((float) 0.1);
+                    view.findViewById(R.id.dagskra).setVisibility(View.VISIBLE);
+                }else {
+//                    view.findViewById(R.id.movie_poster).setAlpha((float) 1);
+                    view.findViewById(R.id.dagskra).setVisibility(View.INVISIBLE);
+                }
                 Toast.makeText(MainActivity.this, "Birta sýningatíma", Toast.LENGTH_SHORT).show();
                 // Búa til activity ef klikkað er á item í listanum
             }

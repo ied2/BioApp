@@ -8,8 +8,8 @@
         android:id="@+id/movie_poster"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        android:src="@drawable/batmanvssuperman_poster"/>
+        android:src="@drawable/warcraft_poster"
+        android:adjustViewBounds="true"/>
 
     <LinearLayout
         android:id="@+id/imdb_section"
@@ -59,44 +59,78 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/dagskra"
+        android:id="@+id/shows"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/movie_poster"
         android:layout_alignBottom="@+id/imdb_section"
         android:padding="10dp"
-        android:visibility="invisible"
+        android:visibility="visible"
         android:background="#aa635e5e">
 
         <TextView
+            android:id="@+id/cinema1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#FFFFFF"
-            android:textSize="25sp"
-            android:text="Háskólabíó"/>
+            android:text="Smárabíó"
+            style="@style/style_shows_25" />
 
         <TextView
+            android:id="@+id/cinema1_showtime"
+            android:text="22:00"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#FFFFFF"
-            android:textSize="16sp"
-            android:text="16:00 18:00 20:00 22:00"/>
+            style="@style/style_shows_16"/>
 
         <TextView
+            android:id="@+id/cinema2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:textColor="#FFFFFF"
-            android:textSize="25sp"
-            android:text="SmáraBíó"/>
+            style="@style/style_shows_25" />
 
         <TextView
+            android:id="@+id/cinema2_showtime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#FFFFFF"
-            android:textSize="16sp"
-            android:text="20:00 22:00"/>
+            style="@style/style_shows_16"/>
+
+        <TextView
+            android:id="@+id/cinema3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/style_shows_25" />
+
+        <TextView
+            android:id="@+id/cinema3_showtime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/style_shows_16"/>
+
+        <TextView
+            android:id="@+id/cinema4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/style_shows_25" />
+
+        <TextView
+            android:id="@+id/cinema4_showtime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/style_shows_16"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom|end">
+
+            <Button
+                android:id="@+id/info"
+                android:text="Sjá Nánar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
 
     </LinearLayout>
 

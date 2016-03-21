@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
 
-
 //        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 //        fab.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -105,7 +104,7 @@ public class MainActivity extends AppCompatActivity
         String line = null;
         String output = "";
 
-        while((line = br.readLine())!= null) {
+        while ((line = br.readLine()) != null) {
             output += line;
         }
 //        Log.d("IED", output);
@@ -138,44 +137,3 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 }
-
-//ListAdapter adapter = new ListAdapter(this, movielist_demo);
-//        list=(ListView)findViewById(R.id.list);
-//        list.setAdapter(adapter);
-//
-//        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                if(view.findViewById(R.id.dagskra).getVisibility() == View.INVISIBLE) {
-////                    view.findViewById(R.id.movie_poster).setAlpha((float) 0.1);
-//                    view.findViewById(R.id.dagskra).setVisibility(View.VISIBLE);
-//                }else {
-////                    view.findViewById(R.id.movie_poster).setAlpha((float) 1);
-//                    view.findViewById(R.id.dagskra).setVisibility(View.INVISIBLE);
-//                }
-//                Toast.makeText(MainActivity.this, "Birta sýningatíma", Toast.LENGTH_SHORT).show();
-//                // Búa til activity ef klikkað er á item í listanum
-//            }
-//        });
-
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        getMenuInflater().inflate(R.menu.main, menu);
-//        return true;
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        // Handle action bar item clicks here. The action bar will
-//        // automatically handle clicks on the Home/Up button, so long
-//        // as you specify a parent activity in AndroidManifest.xml.
-//        int id = item.getItemId();
-//
-//        //noinspection SimplifiableIfStatement
-//        if (id == R.id.action_settings) {
-//            return true;
-//        }
-//
-//        return super.onOptionsItemSelected(item);
-//    }

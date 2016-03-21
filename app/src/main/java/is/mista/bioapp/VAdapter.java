@@ -27,7 +27,6 @@ import org.json.JSONObject;
 public class VAdapter extends RecyclerView.Adapter<VAdapter.MyViewHolder> implements View.OnClickListener {
 
     private LayoutInflater inflater;
-    //List<Movie> data = Collections.emptyList(); // Collections.emptyList() prevents null exception
     private Context context;
     private Movie[] movies;
 
@@ -75,9 +74,9 @@ public class VAdapter extends RecyclerView.Adapter<VAdapter.MyViewHolder> implem
         while(true) {
 
             if(count == current.getShowtimes().length) break;
+            String showtimes = "";
             if(count == 0) {
                 holder.cinema1.setText(current.showtimes[count].getName());
-                String showtimes = "";
                 for(int i = 0; i < current.showtimes.length; i++) {
                     showtimes += " " + current.showtimes[count].getSchedule()[i];
                 }
@@ -86,7 +85,6 @@ public class VAdapter extends RecyclerView.Adapter<VAdapter.MyViewHolder> implem
 
             if(count == 1) {
                 holder.cinema2.setText(current.showtimes[count].getName());
-                String showtimes = "";
                 for(int i = 0; i < current.showtimes.length; i++) {
                     showtimes += " " + current.showtimes[count].getSchedule()[i];
                 }
@@ -95,7 +93,6 @@ public class VAdapter extends RecyclerView.Adapter<VAdapter.MyViewHolder> implem
 
             if(count == 2) {
                 holder.cinema3.setText(current.showtimes[count].getName());
-                String showtimes = "";
                 for(int i = 0; i < current.showtimes.length; i++) {
                     showtimes += " " + current.showtimes[count].getSchedule()[i];
                 }

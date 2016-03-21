@@ -23,18 +23,18 @@ public class Utils {
 
     public void init_movies() throws Exception {
 
-        JSONObject movies = MainActivity.JSON_movies;
-
-        JSONArray s1 = new JSONArray(movies.getString("movies"));
-        int len = s1.length();
-
-        JSONObject[] jMovies = new JSONObject[len];
-
-        for(int i=0; i < s1.length(); i++) {
-            JSONObject item = (JSONObject)s1.get(i);
-            jMovies[i] = item;
-//            Log.d("IED", item.toString());
-        }
+//        JSONObject movies = MainActivity.JSON_movies;
+//
+//        JSONArray s1 = new JSONArray(movies.getString("movies"));
+//        int len = s1.length();
+//
+//        JSONObject[] jMovies = new JSONObject[len];
+//
+//        for(int i=0; i < s1.length(); i++) {
+//            JSONObject item = (JSONObject)s1.get(i);
+//            jMovies[i] = item;
+////            Log.d("IED", item.toString());
+//        }
 
 //        int len = s1.length();
 //

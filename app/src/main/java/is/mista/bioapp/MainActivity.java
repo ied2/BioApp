@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             protected void onPostExecute(String result) {
                 try {
-                    JSON_movies = new JSONObject(result);
+//                    JSON_movies = new JSONObject(result);
                     utils.init_movies();
 
                 } catch (Exception e) {
@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity
 
     private String downloadHTML() throws Exception {
 
-        URL url = new URL("http://www.hvaderibio.is/movies");
+        URL url = new URL("http://kvikmyndir.is/api/showtimes/?key=9ELHcuylU8b8B7Y663bIvi52p6Ra1I68");
 
         InputStream is = url.openStream();
         InputStreamReader isr = new InputStreamReader(is);
@@ -107,7 +107,37 @@ public class MainActivity extends AppCompatActivity
         while ((line = br.readLine()) != null) {
             output += line;
         }
-//        Log.d("IED", output);
+
+        Log.d("IED", output);
+
+        URL url2 = new URL("http://kvikmyndir.is/api/theater_list/?id=10&key=9ELHcuylU8b8B7Y663bIvi52p6Ra1I68");
+
+        InputStream is2 = url2.openStream();
+        InputStreamReader isr2 = new InputStreamReader(is2);
+        BufferedReader br2 = new BufferedReader(isr2);
+        String line2 = null;
+        String output2 = "";
+
+        while ((line2 = br2.readLine()) != null) {
+            output2 += line2;
+        }
+
+        Log.d("IED", output2);
+
+        URL url3 = new URL("http://kvikmyndir.is/api/genres/?key=9ELHcuylU8b8B7Y663bIvi52p6Ra1I68");
+
+        InputStream is3 = url3.openStream();
+        InputStreamReader isr3 = new InputStreamReader(is3);
+        BufferedReader br3 = new BufferedReader(isr3);
+        String line3 = null;
+        String output3 = "";
+
+        while ((line3 = br3.readLine()) != null) {
+            output3 += line3;
+        }
+
+        Log.d("IED", output3);
+
         return output;
     }
 

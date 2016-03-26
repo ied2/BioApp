@@ -45,7 +45,7 @@
                 android:layout_height="wrap_content" />
 
             <TextView
-                android:id="@id/title"
+                android:id="@+id/title"
                 android:layout_toEndOf="@+id/rating"
                 android:layout_marginStart="10dp"
                 android:textSize="18sp"
@@ -58,7 +58,7 @@
 
     </LinearLayout>
 
-    <LinearLayout
+    <FrameLayout
         android:id="@+id/shows"
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -66,63 +66,154 @@
         android:layout_alignTop="@+id/movie_poster"
         android:layout_alignBottom="@+id/imdb_section"
         android:padding="10dp"
-        android:visibility="invisible"
+        android:visibility="visible"
         android:background="#aa635e5e">
 
-        <TextView
-            android:id="@+id/cinema1"
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Smárabíó"
-            style="@style/style_shows_25" />
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/cinema1_showtime"
-            android:text="22:00"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/style_shows_16"/>
+            <TextView
+                android:id="@+id/cinema1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Smárabíó"
+                style="@style/style_shows_25" />
 
-        <TextView
-            android:id="@+id/cinema2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/style_shows_25" />
+            <TextView
+                android:id="@+id/cinema1_showtime"
+                android:text="22:00"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/style_shows_16"/>
 
-        <TextView
-            android:id="@+id/cinema2_showtime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/style_shows_16"/>
+            <TextView
+                android:id="@+id/cinema2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/style_shows_25" />
 
-        <TextView
-            android:id="@+id/cinema3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/style_shows_25" />
+            <TextView
+                android:id="@+id/cinema2_showtime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/style_shows_16"/>
 
-        <TextView
-            android:id="@+id/cinema3_showtime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/style_shows_16"/>
+            <TextView
+                android:id="@+id/cinema3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/style_shows_25" />
 
-        <TextView
-            android:id="@+id/cinema4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/style_shows_25" />
+            <TextView
+                android:id="@+id/cinema3_showtime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/style_shows_16"/>
 
-        <TextView
-            android:id="@+id/cinema4_showtime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/style_shows_16"/>
+            <TextView
+                android:id="@+id/cinema4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/style_shows_25" />
+
+            <TextView
+                android:id="@+id/cinema4_showtime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/style_shows_16"/>
+
+            <TextView
+                android:id="@+id/cinema5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/style_shows_25" />
+
+            <TextView
+                android:id="@+id/cinema5_showtime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/style_shows_16"/>
+
+            <TextView
+                android:id="@+id/cinema6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/style_shows_25" />
+
+            <TextView
+                android:id="@+id/cinema6_showtime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/style_shows_16"/>
+
+            <TextView
+                android:id="@+id/cinema7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/style_shows_25" />
+
+            <TextView
+                android:id="@+id/cinema7_showtime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/style_shows_16"/>
+
+            <TextView
+                android:id="@+id/cinema8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/style_shows_25" />
+
+            <TextView
+                android:id="@+id/cinema8_showtime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/style_shows_16"/>
+
+            <TextView
+                android:id="@+id/cinema9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/style_shows_25" />
+
+            <TextView
+                android:id="@+id/cinema9_showtime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/style_shows_16"/>
+
+            <TextView
+                android:id="@+id/cinema10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/style_shows_25" />
+
+            <TextView
+                android:id="@+id/cinema10_showtime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/style_shows_16"/>
+
+            <TextView
+                android:id="@+id/cinema11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/style_shows_25" />
+
+            <TextView
+                android:id="@+id/cinema11_showtime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/style_shows_16"/>
+        </LinearLayout>
 
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="bottom|end">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginBottom="40dp">
 
             <Button
                 android:id="@+id/info"
@@ -132,6 +223,6 @@
 
         </RelativeLayout>
 
-    </LinearLayout>
+    </FrameLayout>
 
 </RelativeLayout>

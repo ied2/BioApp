@@ -2,6 +2,7 @@ package is.mista.bioapp;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -24,10 +25,11 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity{
 
-    public static JSONObject JSON_movies = null;
+    public static JSONArray JSON_showtimes = null;
+    public static JSONArray JSON_theaterList = null;
+    public static JSONArray JSON_genres = null;
     private Utils utils = new Utils(this);
 
     @Override
@@ -47,32 +49,27 @@ public class MainActivity extends AppCompatActivity
 //            }
 //        });
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
-        toggle.syncState();
+//        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+//        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+//                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+//        drawer.setDrawerListener(toggle);
+//        toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+//        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+//        navigationView.setNavigationItemSelectedListener(this);
 
         downloadFromDatabase();
     }
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
             super.onBackPressed();
-        }
     }
 
     public void downloadFromDatabase() {
 
-        new AsyncTask<Void, Void, String>() {
-            protected String doInBackground(Void... params) {
+        new AsyncTask<Void, Void, String[]>() {
+            protected String[] doInBackground(Void... params) {
                 try {
                     return downloadHTML();
                 } catch (Exception e) {
@@ -82,9 +79,11 @@ public class MainActivity extends AppCompatActivity
             }
 
             @Override
-            protected void onPostExecute(String result) {
+            protected void onPostExecute(String[] result) {
                 try {
-//                    JSON_movies = new JSONObject(result);
+                    JSON_showtimes = new JSONArray(result[0]);
+                    JSON_theaterList = new JSONArray(result[1]);
+                    JSON_genres = new JSONArray(result[2]);
                     utils.init_movies();
 
                 } catch (Exception e) {
@@ -94,21 +93,22 @@ public class MainActivity extends AppCompatActivity
         }.execute();
     }
 
-    private String downloadHTML() throws Exception {
+    private String[] downloadHTML() throws Exception {
 
+        String[] array = new String[3];
         URL url = new URL("http://kvikmyndir.is/api/showtimes/?key=9ELHcuylU8b8B7Y663bIvi52p6Ra1I68");
 
         InputStream is = url.openStream();
         InputStreamReader isr = new InputStreamReader(is);
         BufferedReader br = new BufferedReader(isr);
         String line = null;
-        String output = "";
+        String output1 = "";
 
         while ((line = br.readLine()) != null) {
-            output += line;
+            output1 += line;
         }
-
-        Log.d("IED", output);
+        array[0] = output1;
+        Log.d("IED", output1);
 
         URL url2 = new URL("http://kvikmyndir.is/api/theater_list/?id=10&key=9ELHcuylU8b8B7Y663bIvi52p6Ra1I68");
 
@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity
         while ((line2 = br2.readLine()) != null) {
             output2 += line2;
         }
-
+        array[1] = output2;
         Log.d("IED", output2);
 
         URL url3 = new URL("http://kvikmyndir.is/api/genres/?key=9ELHcuylU8b8B7Y663bIvi52p6Ra1I68");
@@ -135,35 +135,35 @@ public class MainActivity extends AppCompatActivity
         while ((line3 = br3.readLine()) != null) {
             output3 += line3;
         }
-
+        array[2] = output3;
         Log.d("IED", output3);
 
-        return output;
+        return array;
     }
 
 
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
-        }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
+//    @SuppressWarnings("StatementWithEmptyBody")
+//    @Override
+//    public boolean onNavigationItemSelected(MenuItem item) {
+//        // Handle navigation view item clicks here.
+//        int id = item.getItemId();
+//
+//        if (id == R.id.nav_camera) {
+//            // Handle the camera action
+//        } else if (id == R.id.nav_gallery) {
+//
+//        } else if (id == R.id.nav_slideshow) {
+//
+//        } else if (id == R.id.nav_manage) {
+//
+//        } else if (id == R.id.nav_share) {
+//
+//        } else if (id == R.id.nav_send) {
+//
+//        }
+//
+//        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+//        drawer.closeDrawer(GravityCompat.START);
+//        return true;
+//    }
 }

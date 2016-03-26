@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -28,9 +29,11 @@ public class VAdapter extends RecyclerView.Adapter<VAdapter.MyViewHolder> implem
 
     private LayoutInflater inflater;
     private Context context;
-    private Movie[] movies;
+    private List<Movie> movies;
+    private String[] theaters = {"","SmáraBíó", "Háskólabíó", "BorgarBíó", "Laugarásbíó", "Bíó Paradís", "Sambíóin, Álfabakki",
+                                "Kringlubíó", "Sambíóin, Egilshöll", "Sambíóin, Akureyri", "Sambíóin, Selfossi", "Sambíóin, Keflavík"};
 
-    public VAdapter(Context context, Movie[] movies) {
+    public VAdapter(Context context, List<Movie> movies) {
         this.context = context;
         inflater = LayoutInflater.from(this.context);
         this.movies = movies;
@@ -51,7 +54,9 @@ public class VAdapter extends RecyclerView.Adapter<VAdapter.MyViewHolder> implem
 
 //        Movie current = data.get(position); // get current item from our list at given position
 
-        Movie current = movies[position];
+        holder.itemView.findViewById(R.id.shows).setVisibility(View.INVISIBLE);
+
+        Movie current = movies.get(position);
 
         String title = current.getTitle();
         String rating = current.getRating();
@@ -72,31 +77,105 @@ public class VAdapter extends RecyclerView.Adapter<VAdapter.MyViewHolder> implem
 
         // ShowTimes
         while(true) {
-
-            if(count == current.getShowtimes().length) break;
+            if(count == current.getShowtimes().size()) break;
             String showtimes = "";
             if(count == 0) {
-                holder.cinema1.setText(current.showtimes[count].getName());
-                for(int i = 0; i < current.showtimes.length; i++) {
-                    showtimes += " " + current.showtimes[count].getSchedule()[i];
+                String name = theaters[Integer.parseInt(current.showtimes.get(count).getName())];
+                holder.cinema1.setText(name);
+                for(int i = 0; i < current.showtimes.get(count).getSchedule().size(); i++) {
+                    showtimes += " " + current.showtimes.get(count).getSchedule().get(i);
                 }
                 holder.cinema1_showtime.setText(showtimes);
             }
 
             if(count == 1) {
-                holder.cinema2.setText(current.showtimes[count].getName());
-                for(int i = 0; i < current.showtimes.length; i++) {
-                    showtimes += " " + current.showtimes[count].getSchedule()[i];
+                String name = theaters[Integer.parseInt(current.showtimes.get(count).getName())];
+                holder.cinema2.setText(name);
+                for(int i = 0; i < current.showtimes.get(count).getSchedule().size(); i++) {
+                    showtimes += " " + current.showtimes.get(count).getSchedule().get(i);
                 }
                 holder.cinema2_showtime.setText(showtimes);
             }
 
             if(count == 2) {
-                holder.cinema3.setText(current.showtimes[count].getName());
-                for(int i = 0; i < current.showtimes.length; i++) {
-                    showtimes += " " + current.showtimes[count].getSchedule()[i];
+                String name = theaters[Integer.parseInt(current.showtimes.get(count).getName())];
+                holder.cinema3.setText(name);
+                for(int i = 0; i < current.showtimes.get(count).getSchedule().size(); i++) {
+                    showtimes += " " + current.showtimes.get(count).getSchedule().get(i);
                 }
                 holder.cinema3_showtime.setText(showtimes);
+            }
+
+            if(count == 3) {
+                String name = theaters[Integer.parseInt(current.showtimes.get(count).getName())];
+                holder.cinema4.setText(name);
+                for(int i = 0; i < current.showtimes.get(count).getSchedule().size(); i++) {
+                    showtimes += " " + current.showtimes.get(count).getSchedule().get(i);
+                }
+                holder.cinema4_showtime.setText(showtimes);
+            }
+
+            if(count == 4) {
+                String name = theaters[Integer.parseInt(current.showtimes.get(count).getName())];
+                holder.cinema5.setText(name);
+                for(int i = 0; i < current.showtimes.get(count).getSchedule().size(); i++) {
+                    showtimes += " " + current.showtimes.get(count).getSchedule().get(i);
+                }
+                holder.cinema5_showtime.setText(showtimes);
+            }
+
+            if(count == 5) {
+                String name = theaters[Integer.parseInt(current.showtimes.get(count).getName())];
+                holder.cinema6.setText(name);
+                for(int i = 0; i < current.showtimes.get(count).getSchedule().size(); i++) {
+                    showtimes += " " + current.showtimes.get(count).getSchedule().get(i);
+                }
+                holder.cinema6_showtime.setText(showtimes);
+            }
+
+            if(count == 6) {
+                String name = theaters[Integer.parseInt(current.showtimes.get(count).getName())];
+                holder.cinema7.setText(name);
+                for(int i = 0; i < current.showtimes.get(count).getSchedule().size(); i++) {
+                    showtimes += " " + current.showtimes.get(count).getSchedule().get(i);
+                }
+                holder.cinema7_showtime.setText(showtimes);
+            }
+
+            if(count == 7) {
+                String name = theaters[Integer.parseInt(current.showtimes.get(count).getName())];
+                holder.cinema8.setText(name);
+                for(int i = 0; i < current.showtimes.get(count).getSchedule().size(); i++) {
+                    showtimes += " " + current.showtimes.get(count).getSchedule().get(i);
+                }
+                holder.cinema8_showtime.setText(showtimes);
+            }
+
+            if(count == 8) {
+                String name = theaters[Integer.parseInt(current.showtimes.get(count).getName())];
+                holder.cinema9.setText(name);
+                for(int i = 0; i < current.showtimes.get(count).getSchedule().size(); i++) {
+                    showtimes += " " + current.showtimes.get(count).getSchedule().get(i);
+                }
+                holder.cinema9_showtime.setText(showtimes);
+            }
+
+            if(count == 9) {
+                String name = theaters[Integer.parseInt(current.showtimes.get(count).getName())];
+                holder.cinema10.setText(name);
+                for(int i = 0; i < current.showtimes.get(count).getSchedule().size(); i++) {
+                    showtimes += " " + current.showtimes.get(count).getSchedule().get(i);
+                }
+                holder.cinema10_showtime.setText(showtimes);
+            }
+
+            if(count == 10) {
+                String name = theaters[Integer.parseInt(current.showtimes.get(count).getName())];
+                holder.cinema11.setText(name);
+                for(int i = 0; i < current.showtimes.get(count).getSchedule().size(); i++) {
+                    showtimes += " " + current.showtimes.get(count).getSchedule().get(i);
+                }
+                holder.cinema11_showtime.setText(showtimes);
             }
             count++;
         }
@@ -104,13 +183,13 @@ public class VAdapter extends RecyclerView.Adapter<VAdapter.MyViewHolder> implem
 
     @Override
     public int getItemCount() {
-        return movies.length;
+        return movies.size();
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder {
 
         Button info;
-        LinearLayout shows;
+        FrameLayout shows;
         TextView title;
         TextView rating;
         ImageView icon;
@@ -121,6 +200,24 @@ public class VAdapter extends RecyclerView.Adapter<VAdapter.MyViewHolder> implem
         TextView cinema2_showtime;
         TextView cinema3;
         TextView cinema3_showtime;
+        TextView cinema4;
+        TextView cinema4_showtime;
+        TextView cinema5;
+        TextView cinema5_showtime;
+        TextView cinema6;
+        TextView cinema6_showtime;
+        TextView cinema7;
+        TextView cinema7_showtime;
+        TextView cinema8;
+        TextView cinema8_showtime;
+        TextView cinema9;
+        TextView cinema9_showtime;
+        TextView cinema10;
+        TextView cinema10_showtime;
+        TextView cinema11;
+        TextView cinema11_showtime;
+
+
 
         public MyViewHolder(final View itemView) {
             super(itemView);
@@ -131,8 +228,25 @@ public class VAdapter extends RecyclerView.Adapter<VAdapter.MyViewHolder> implem
             cinema2_showtime = (TextView) itemView.findViewById(R.id.cinema2_showtime);
             cinema3 = (TextView) itemView.findViewById(R.id.cinema3);
             cinema3_showtime = (TextView) itemView.findViewById(R.id.cinema3_showtime);
+            cinema4 = (TextView) itemView.findViewById(R.id.cinema4);
+            cinema4_showtime = (TextView) itemView.findViewById(R.id.cinema4_showtime);
+            cinema5 = (TextView) itemView.findViewById(R.id.cinema5);
+            cinema5_showtime = (TextView) itemView.findViewById(R.id.cinema5_showtime);
+            cinema6 = (TextView) itemView.findViewById(R.id.cinema6);
+            cinema6_showtime = (TextView) itemView.findViewById(R.id.cinema6_showtime);
+            cinema7 = (TextView) itemView.findViewById(R.id.cinema7);
+            cinema7_showtime = (TextView) itemView.findViewById(R.id.cinema7_showtime);
+            cinema8 = (TextView) itemView.findViewById(R.id.cinema8);
+            cinema8_showtime = (TextView) itemView.findViewById(R.id.cinema8_showtime);
+            cinema9 = (TextView) itemView.findViewById(R.id.cinema9);
+            cinema9_showtime = (TextView) itemView.findViewById(R.id.cinema9_showtime);
+            cinema10 = (TextView) itemView.findViewById(R.id.cinema10);
+            cinema10_showtime = (TextView) itemView.findViewById(R.id.cinema10_showtime);
+            cinema11 = (TextView) itemView.findViewById(R.id.cinema11);
+            cinema11_showtime = (TextView) itemView.findViewById(R.id.cinema11_showtime);
 
-            shows = (LinearLayout) itemView.findViewById(R.id.shows);
+
+            shows = (FrameLayout) itemView.findViewById(R.id.shows);
             title = (TextView) itemView.findViewById(R.id.title);
             rating = (TextView) itemView.findViewById(R.id.rating);
             icon = (ImageView) itemView.findViewById(R.id.movie_poster);

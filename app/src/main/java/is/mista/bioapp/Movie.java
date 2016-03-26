@@ -1,19 +1,21 @@
 package is.mista.bioapp;
 
+import java.util.List;
+
 public class Movie {
     String title;
     String certificate;
-    String duration;
+    int duration;
     String[] genres;
     String poster;
     String[] actors;
     String[] directors;
     String rating;
     String imdbUrl;
-    Cinema[] showtimes;
+    List<Cinema> showtimes;
     String trailer;
     String plot;
-    String id;
+    int id;
 
     public String getTitle() {
         return title;
@@ -31,11 +33,11 @@ public class Movie {
         this.certificate = certificate;
     }
 
-    public String getDuration() {
+    public int getDuration() {
         return duration;
     }
 
-    public void setDuration(String duration) {
+    public void setDuration(int duration) {
         this.duration = duration;
     }
 
@@ -87,11 +89,11 @@ public class Movie {
         this.imdbUrl = imdbUrl;
     }
 
-    public Cinema[] getShowtimes() {
+    public List<Cinema> getShowtimes() {
         return showtimes;
     }
 
-    public void setShowtimes(Cinema[] showtimes) {
+    public void setShowtimes(List<Cinema> showtimes) {
         this.showtimes = showtimes;
     }
 
@@ -111,11 +113,11 @@ public class Movie {
         this.plot = plot;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 }

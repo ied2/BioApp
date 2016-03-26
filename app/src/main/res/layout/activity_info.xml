@@ -1,13 +1,174 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="When Callum Lynch (Michael Fassbender) explores the memories of his ancestor Aguilar and gains the skills of a Master Assassin, he discovers he is a descendant of the secret Assassins society."
-        android:textSize="20sp"/>
+    <com.google.android.youtube.player.YouTubePlayerView
+        android:id="@+id/youtube_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/duration"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.33"
+                    android:gravity="center_horizontal"
+                    android:text="90 min"/>
+
+                <TextView
+                    android:id="@+id/certificate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.33"
+                    android:gravity="center_horizontal"
+                    android:text="12 ára"/>
+
+                <TextView
+                    android:id="@+id/genre"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.33"
+                    android:gravity="center_horizontal"
+                    android:text="Comedy"/>
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#000000"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"/>
+
+            <TextView
+                android:id="@+id/directors"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Micheal Bay"/>
+
+            <TextView
+                android:id="@+id/actors"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Brad Pit"/>
+
+            <TextView
+                android:id="@+id/plot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="When Callum Lynch (Michael Fassbender) explores the memories of his ancestor Aguilar and gains the skills of a Master Assassin, he discovers he is a descendant of the secret Assassins society."
+                android:textSize="16sp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#000000"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"/>
+
+            <TextView
+                android:id="@+id/reviews"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Reviews"/>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:background="@drawable/reviews_background">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="Sturlaugur Haraldsson"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Much of the enduring popularity of the Lord Of The Rings films can be attributed to their
+                    skillful balance of the intimate and the mythic; these were blockbuster adventures
+                    that never lost sight of their adventurers, be they human, halfling, or otherwise.
+                    "/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:padding="5dp"
+                android:background="@drawable/reviews_background">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="Ivan Elí Du Teitsson"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Much of the enduring popularity of the Lord Of The Rings films can be attributed to their
+                    skillful balance of the intimate and the mythic; these were blockbuster adventures
+                    that never lost sight of their adventurers, be they human, halfling, or otherwise.
+                    "/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:descendantFocusability="beforeDescendants"
+                android:focusableInTouchMode="true">
+
+                <EditText
+                    android:id="@+id/write_review"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="100dp"
+                    android:gravity="top|left"
+                    android:padding="5dp"
+                    android:hint="Your Review..."
+                    android:inputType="textCapSentences|textMultiLine"
+                    android:scrollHorizontally="false"
+                    android:maxLength="300"
+                    android:background="@drawable/reviews_background"/>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="#4b9632"
+                    android:text="Post"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
 
 </LinearLayout>

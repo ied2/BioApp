@@ -256,6 +256,15 @@ public class VAdapter extends RecyclerView.Adapter<VAdapter.MyViewHolder> implem
                 @Override
                 public void onClick(View v) {
                     Intent i = new Intent(itemView.getContext(), InfoActivity.class);
+                    String title = (String) ((TextView) itemView.findViewById(R.id.title)).getText();
+                    for(int j = 0; j < movies.size(); j++) {
+                        if(title.equals(movies.get(j).getTitle())) {
+                            i.putExtra("id", String.valueOf(movies.get(j).getId()));
+                            i.putExtra("duration", String.valueOf(movies.get(j).getDuration()));
+                            i.putExtra("certificate", movies.get(j).getCertificate());
+//                            i.putExtra("genre", movies.get(j).getGenres());
+                        }
+                    }
                     itemView.getContext().startActivity(i);
                 }
             });
